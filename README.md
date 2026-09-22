@@ -7,6 +7,8 @@ Copiloto de venture studio para discovery e execução de MVPs com IA.
 ## Documentação
 
 - [Enquadramento do problema](docs/enquadramento.md) — contexto, dor do usuário, hipótese de valor, métrica de validação e fora de escopo.
+- [Arquitetura](docs/arquitetura.md) — justificativa de cada decisão de stack no contexto de venture studio.
+- [Caso de treino: Fênix Studio](docs/caso-fenix-studio.md) — exercício de enquadramento, hipótese, stack e ciclo de vida em 6 semanas.
 
 ## Stack
 
