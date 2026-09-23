@@ -1,0 +1,5 @@
+# Configuração do TaskNotes para este projeto
+# Os caminhos usam os padrões da ferramenta:
+#   tasks_dir    = "docs/TaskNotes/Tasks"
+#   sprint_file  = "memory-bank/sprint.md"
+#   context_file = "memory-bank/activeContext.md"
