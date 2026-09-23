@@ -10,6 +10,7 @@ Copiloto de venture studio para discovery e execução de MVPs com IA.
 - [Arquitetura](docs/arquitetura.md) — justificativa de cada decisão de stack no contexto de venture studio.
 - [Caso de treino: Fênix Studio](docs/caso-fenix-studio.md) — exercício de enquadramento, hipótese, stack e ciclo de vida em 6 semanas.
 - [Pair programming com IA](docs/pair-programming.md) — o pedido com critérios, o que foi aceito e o que foi rejeitado na revisão.
+- [Atualização de sprint](docs/sprint-update.md) — roteiro da demo, decisões e bloqueios em linguagem de negócio.
 
 ## Stack
 
