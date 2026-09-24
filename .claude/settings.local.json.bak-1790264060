@@ -1,0 +1,11 @@
+{
+  "enabledPlugins": {},
+  "extraKnownMarketplaces": {
+    "devkit-managed-gustavorigo-paris-group-copilot": {
+      "source": {
+        "source": "file",
+        "path": "/Users/gustavorigo/www/cursos/onboarding/paris-group-copilot/.claude/devkit/marketplace.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+schema_version: 1
+profile_origin: minimal
+plugins:
+  - pg-baseline
+assets:
+  skills:
+    - commit-discipline
+    - session-start
+    - session-close
+    - tasknotes-cli
+    - find-skills
+    - context-maintenance
+    - agents-maintenance
+    - memory-bank
+    - context-architecture-audit
+    - testing-strategy
+    - reviewer
+    - brainstorming
+    - executing-plans
+    - subagent-driven-development
+    - systematic-debugging
+    - test-driven-development
+    - verification-before-completion
+    - writing-plans
+    - finishing-a-development-branch
+    - pg-commit-review
+    - prototype-first
+    - goal
+    - context-discipline
+    - linguagem-simples
+    - repoguardian
+    - qa
+    - eval
+    - pg-yagni
+    - capture-lesson
+    - package-adopt
+    - resolve-work
+    - obsolete-test-repair
+  commands:
+    - commit
+    - session-start
+    - session-close
+    - goal
+    - qa
+    - eval
+    - resolve-work
+  agents: []
+  hooks: []
