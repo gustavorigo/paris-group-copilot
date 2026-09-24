@@ -52,3 +52,48 @@ Há ainda um efeito de segunda ordem: escrever o critério obriga quem pede a de
 - **Rastreabilidade** — referência explícita à Issue ou à TaskNote
 - **Integridade de contratos** — alinhamento com o chassi Full-TS da organização
 - **Handoff** — contexto, decisões pendentes e próximos passos, para que o PR também sirva de passagem de bastão
+
+---
+
+## Complementos após revisão
+
+### Complemento à pergunta 2 — inicialização do projeto
+
+O ecossistema de devkit expõe um comando de inicialização executado **na raiz do repositório** (`claude-devkit init` no ecossistema Claude DevKit; na frota da Paris Group as lições apresentaram `pg-devkit doctor` e `workflow-policy.sh set-mode pr`).
+
+Rodar esse comando na raiz gera a **estrutura padrão de configuração** do repositório: os arquivos de contexto para o agente (`AGENTS.md`, `CLAUDE.md`), a configuração de governança de Git que barra push direto na `main`, e os arquivos de política e diagnóstico do devkit. O efeito é que um repositório novo já nasce com as regras da casa escritas e travadas, em vez de depender de cada pessoa configurar do seu jeito.
+
+### Complemento à pergunta 3 — rastreamento de tempo e sessão no TaskNotes
+
+Além de não exigir sair do terminal e de versionar as tarefas junto com o código, o TaskNotes CLI é otimizado para **rastreamento de tempo, sessões de trabalho e contexto da tarefa ativa** — algo que o GitHub Issues não faz:
+
+- `tn start <UID>` marca a tarefa como em progresso e inicia a contagem de tempo
+- `tn timer start/stop` controla o cronômetro da tarefa ativa
+- `tn pomo` roda ciclos de pomodoro atrelados à tarefa
+- `tn time` gera relatórios de tempo
+- `tn session start/log/close` registra a sessão de trabalho e prepara o handoff
+- `tn context` mantém o contexto ativo do que está sendo feito
+
+Ou seja: o Issue registra **o que foi acordado**; o TaskNotes registra **o trabalho acontecendo** — tempo gasto, sessão, foco e contexto da tarefa ativa. São complementares.
+
+### Complemento à pergunta 6 — sinalização de código gerado por IA
+
+Num venture studio onde agentes escrevem código, o template de PR precisa declarar **como o código foi feito**. Sem isso, quem revisa não sabe se está lendo código escrito por pessoa ou por agente — e a revisão procura problemas diferentes em cada caso.
+
+Seção adicionada ao template deste repositório (`.github/pull_request_template.md`):
+
+```markdown
+## Código gerado por agente
+
+**O que foi gerado pelo agente:**      → onde o revisor deve olhar
+**Critérios de aceitação passados:**   → contra o que julgar a entrega
+**Aceito e rejeitado na revisão:**     → prova de que houve julgamento humano
+- [ ] Revisão humana linha a linha     → quem assume o código
+```
+
+Exemplo preenchido, na entrega da listagem de hipóteses:
+
+- **Gerado pelo agente:** `src/app/hipotese/page.tsx` inteiro
+- **Critérios passados:** mostrar se, baseline, alvo e estado; tratar lista vazia com mensagem e instrução de cadastro; não incluir editar, excluir ou paginação
+- **Aceito além do pedido:** aviso quando o backend está fora do ar e cor na etiqueta de estado, ambos declarados pelo agente como escolha própria
+- **Rejeitado em ciclo anterior:** o backend em Python como padrão da casa
