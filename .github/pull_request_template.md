@@ -22,6 +22,21 @@
 
 - [ ] Alinhado ao chassi da organização
 
+## Código gerado por agente
+
+<!-- Preencher sempre que houver código escrito por agente de IA nesta entrega. -->
+
+**O que foi gerado pelo agente:**
+<!-- arquivos ou partes. Ex: src/app/hipotese/page.tsx inteiro -->
+
+**Critérios de aceitação passados no pedido:**
+<!-- contra o que o revisor deve julgar a entrega -->
+
+**Aceito e rejeitado na revisão:**
+<!-- o que veio além do pedido e foi mantido, e o que foi recusado e por quê -->
+
+- [ ] Revisão humana linha a linha antes de abrir o PR
+
 ## Handoff
 
 **Contexto:**
