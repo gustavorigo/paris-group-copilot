@@ -1,18 +1,6 @@
-<!-- BEGIN:nextjs-agent-rules -->
+<!-- global-adrs-digest: auto-generated. Do not edit directly. -->
 
-# This is NOT the Next.js you know
-
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
-
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
-
-<!-- END:nextjs-agent-rules -->
-
-<!-- >>> pg-devkit managed adr digest >>> -->
-
-## Architecture Decisions (Digest)
-
-> Platform and local ADR forward rules. View full rationale: `pg-devkit adr view <id>`.
+# Global Architecture Decisions (Digest)
 
 - **ADR-0001**: Evidence before assertions; run gate suite and check actual output before asserting completion. (`pg-devkit adr view ADR-0001`)
 - **ADR-0002**: A single canonical test runner is mandatory; legacy runners (jest/mocha) are disallowed across TypeScript projects. (`pg-devkit adr view ADR-0002`)
@@ -26,5 +14,3 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - **ADR-0019**: Performance and prompt tuning must follow autonomous closed loops with objective scoring and auto-revert on regression. (`pg-devkit adr view ADR-0019`)
 - **ADR-0021**: Structural codebase queries and refactors must verify dependency graphs and enforce drift gates against regression. (`pg-devkit adr view ADR-0021`)
 - **ADR-0023**: Fleet apps call gateway models only via pg-* aliases (incl. pg-stt/tts/image); swaps are infra-side env changes, never consumer code. (`pg-devkit adr view ADR-0023`)
-
-<!-- <<< pg-devkit managed adr digest <<< -->
