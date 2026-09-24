@@ -23,6 +23,6 @@ Description here.
 
 ## Subtasks
 - [x] Instalar Rust e compilar o TaskNotes CLI
-- [ ] Obter acesso ao pacote privado pg-devkit
+- [x] Obter acesso ao pacote privado pg-devkit
 - [ ] Clonar e configurar o PG-Vault
 ## Notes
