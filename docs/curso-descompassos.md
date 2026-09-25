@@ -82,7 +82,7 @@ O material alterna entre "Orca" e "AsyncMe" para a mesma ferramenta de handoff, 
 
 ## 7. Atrito de acesso no onboarding
 
-Dois bloqueios de acesso interromperam exercícios. Não são erros de conteúdo, mas afetam quem chega:
+Três bloqueios de acesso interromperam exercícios. Não são erros de conteúdo, mas afetam quem chega:
 
 | Ferramenta | Situação |
 |---|---|
@@ -100,5 +100,3 @@ Dois bloqueios de acesso interromperam exercícios. Não são erros de conteúdo
 2. **Prioridade média:** itens 3 e 5 — contradição interna e pergunta sem aula.
 3. **Prioridade baixa:** itens 4 e 6 — atrito, não bloqueio.
 4. **Processo:** os erros têm um padrão comum — descrevem a stack como ela *seria*, não como ela *está*. Gerar as aulas de comando a partir da saída real de `--help` e dos README dos pacotes, e não de descrição, evitaria a recorrência.
-
-Ofereço-me para revisar os módulos 1 a 3 contra a stack atual, se for útil.
