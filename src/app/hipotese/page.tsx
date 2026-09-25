@@ -1,21 +1,12 @@
-import { HipotesesList, type HipoteseRow } from "@/components/hipoteses/hipoteses-list";
-
-const API = process.env.API_URL ?? "http://localhost:8000";
-
-async function buscarHipoteses(): Promise<HipoteseRow[] | null> {
-  try {
-    const res = await fetch(`${API}/hipoteses`, { cache: "no-store" });
-    if (!res.ok) return null;
-    return (await res.json()) as HipoteseRow[];
-  } catch {
-    return null;
-  }
-}
+import { HipotesesList } from "@/components/hipoteses/hipoteses-list";
+import { api } from "@/lib/api/client";
 
 export default async function HipotesePage() {
-  const hipoteses = await buscarHipoteses();
+  const { data, error } = await api.GET("/hipoteses", {
+    fetch: (req) => fetch(req, { cache: "no-store" }),
+  });
 
-  if (hipoteses === null) {
+  if (error || !data) {
     return (
       <main className="mx-auto max-w-3xl px-4 py-10">
         <h1 className="text-2xl font-semibold">Hipóteses de Valor</h1>
@@ -27,5 +18,5 @@ export default async function HipotesePage() {
     );
   }
 
-  return <HipotesesList items={hipoteses} />;
+  return <HipotesesList items={data} />;
 }
