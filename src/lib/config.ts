@@ -1,19 +1,23 @@
 /**
- * Configuração da aplicação por ambiente.
+ * Configuração do frontend por ambiente.
  *
- * Em produção, variável obrigatória ausente derruba a aplicação na subida,
- * com mensagem dizendo qual falta. É melhor falhar no deploy do que servir
- * requisição com configuração incompleta.
+ * O frontend fala com o backend FastAPI, não com o banco. Por isso a
+ * única variável obrigatória aqui é a URL da API — a credencial do
+ * PostgreSQL é exigida do backend, onde ela é de fato usada.
+ *
+ * Em produção, variável obrigatória ausente derruba a aplicação na
+ * subida, com o nome do que falta. Melhor falhar no deploy do que
+ * servir requisição com configuração incompleta.
  */
 
 type Ambiente = "development" | "production" | "test";
 
 const ambiente = (process.env.NODE_ENV ?? "development") as Ambiente;
 
-/** Variáveis exigidas em produção. Em desenvolvimento há padrão local. */
-const OBRIGATORIAS_EM_PRODUCAO = ["NEXT_PUBLIC_API_URL", "DATABASE_URL"] as const;
+/** Variáveis que o frontend exige em produção. */
+const OBRIGATORIAS_EM_PRODUCAO = ["NEXT_PUBLIC_API_URL"] as const;
 
-function exigir(nome: string, padraoLocal?: string): string {
+function exigir(nome: string, padraoLocal: string): string {
   const valor = process.env[nome];
   if (valor) return valor;
 
@@ -25,23 +29,14 @@ function exigir(nome: string, padraoLocal?: string): string {
     );
   }
 
-  if (padraoLocal !== undefined) return padraoLocal;
-
-  throw new Error(
-    `Configuração ausente: ${nome}. Copie .env.production.example para .env.local e preencha.`,
-  );
+  return padraoLocal;
 }
 
 export const config = {
   ambiente,
-  /** URL do backend FastAPI. */
+  /** URL do backend FastAPI. Única variável obrigatória do frontend. */
   apiUrl: exigir("NEXT_PUBLIC_API_URL", "http://localhost:8000"),
-  /** Conexão com o PostgreSQL. Só usada no servidor. */
-  databaseUrl: exigir(
-    "DATABASE_URL",
-    "postgresql+psycopg://copilot:copilot@localhost:5433/copilot",
-  ),
-  /** Conexão com o Redis. Opcional enquanto não há cache. */
+  /** Cache. Opcional enquanto não há uso no frontend. */
   redisUrl: process.env.REDIS_URL ?? null,
 } as const;
 
