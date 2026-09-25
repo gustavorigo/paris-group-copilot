@@ -1,8 +1,9 @@
 ---
 uid: chore-004
-status: open
+status: done
 priority: low
 scheduled: 2026-09-25
+completed: 2026-09-25
 pomodoros: 0
 createdBy: gustavorigo
 tags:
