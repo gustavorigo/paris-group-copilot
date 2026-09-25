@@ -44,10 +44,13 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Checagem de tipos
-        run: npx tsc --noEmit
-
       - name: Build
+        # O build vem antes da checagem de tipos porque ele gera os tipos
+        # de rota do Next.js (.next/types). Numa maquina limpa esses tipos
+        # ainda nao existem, e o tsc sozinho falharia em layout.tsx.
         run: npm run build
         env:
           NEXT_PUBLIC_API_URL: http://localhost:8000
+
+      - name: Checagem de tipos
+        run: npx tsc --noEmit
