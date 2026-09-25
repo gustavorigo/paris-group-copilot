@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "@parisgroup-ai/pageshell/theme/tokens.css";
+@import "@parisgroup-ai/pageshell/theme/portal-base.css";
+@import "@parisgroup-ai/pageshell/theme/presets/default.css";
 
 :root {
   --background: #ffffff;
