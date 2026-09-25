@@ -28,6 +28,14 @@ jobs:
           node-version: 22
           cache: npm
 
+      - name: Autenticar no GitHub Packages
+        # O PageShell é pacote privado da organização. O token automático
+        # do GitHub só vale para este repositório, então a leitura de
+        # pacotes de outra org exige um token próprio, guardado em secret.
+        run: |
+          echo "@parisgroup-ai:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.PG_PACKAGES_TOKEN }}" >> .npmrc
+
       - name: Instalar dependências
         # npm ci respeita o package-lock.json: a CI instala exatamente
         # as mesmas versões que rodam na máquina de quem desenvolve.
