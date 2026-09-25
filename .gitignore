@@ -55,3 +55,6 @@ next-env.d.ts
 # python
 __pycache__/
 *.py[cod]
+
+# npmrc gerado na CI
+.npmrc
