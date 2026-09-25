@@ -1,11 +1,19 @@
 ---
 uid: feat-003
-status: in-progress
+status: done
 priority: normal
 scheduled: 2026-09-25
+completed: 2026-09-25
 pomodoros: 0
 createdBy: gustavorigo
 firstStartedAt: 2026-09-25T23:35:05.014851Z
+filesTouched:
+- docs/TaskNotes/Tasks/FEAT-003-listar-projetos-com-selo-de-hipoteses-por-projeto.md
+- src/app/projeto/page.tsx
+- src/components/projetos/hipoteses-badge.tsx
+- src/components/projetos/projetos-list.tsx
+commits:
+- 4040bd1
 tags:
 - task
 - feat
