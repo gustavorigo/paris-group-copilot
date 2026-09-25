@@ -21,7 +21,7 @@ ai:
 Description here.
 
 ## Subtasks
-- [ ] Gerar os tipos TypeScript a partir do /openapi.json do FastAPI
-- [ ] Trocar o fetch com tipo escrito a mao por cliente tipado
-- [ ] Isolar configuracao em lib/config.ts com validacao por ambiente
+- [x] Gerar os tipos TypeScript a partir do /openapi.json do FastAPI
+- [x] Trocar o fetch com tipo escrito a mao por cliente tipado
+- [x] Isolar configuracao em lib/config.ts com validacao por ambiente
 ## Notes
