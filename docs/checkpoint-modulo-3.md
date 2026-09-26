@@ -99,3 +99,20 @@ Campo novo no backend fica disponível na tela com um comando: `npm run api:type
 **Por que essa ordem:** domínio → estrutura → aparência. Começar pelos componentes significa desenhar telas para dados que talvez não existam — o erro clássico de quem parte do protótipo visual e descobre depois que o backend não tem aquele campo.
 
 É a mesma ordem do curso: o Módulo 1 enquadrou o problema, o Módulo 2 organizou o trabalho, o Módulo 3 construiu.
+
+**4. Registrar cada adaptação.** Toda mudança sobre a base ganha rastro, senão daqui a seis meses ninguém sabe se foi decisão ou descuido. No projeto, isso aconteceu em três camadas:
+
+| Onde | O quê |
+|---|---|
+| **TaskNotes** | uma tarefa por adaptação, com subtasks refletindo o estado real — `FEAT-002` (tipar o cliente pelo contrato), `FEAT-003` (lista com selo), `CHORE-004` (rotas exigidas pelo validador) |
+| **Mensagem de commit** | o *porquê*, não só o *o quê*. O commit das rotas em `pages/` registra que a duplicação de roteador existe por exigência do validador, e não por escolha de arquitetura |
+| **Documentos no repositório** | `docs/arquitetura.md` justifica cada decisão de stack; `docs/pair-programming.md` registra o que foi aceito e rejeitado do que o agente gerou; `docs/curso-descompassos.md` lista onde o material diverge da stack real |
+
+**Exemplos de decisões que ficaram documentadas em vez de implícitas:**
+
+- **Dois roteadores no mesmo projeto.** `/projects` em Pages Router convive com `/projeto` em App Router. O commit explica que o critério do módulo exigia Pages Router enquanto o chassi define App Router.
+- **`DATABASE_URL` fora das obrigatórias do frontend.** A CI quebrou com a mensagem da própria trava de configuração. Em vez de silenciar com um valor falso, a variável saiu da lista — o frontend fala com o FastAPI, não com o banco. O commit registra o raciocínio.
+- **Trava de chaves com `satisfies`.** Existe porque o `SimpleListPage` aceita `key` como texto livre. O comentário no código explica o buraco que ela fecha.
+- **Backend em Python mantido, mas não recomendado.** Registrado em `docs/arquitetura.md` como divergência do chassi Full-TS, com a recomendação de não adotar — e como decisão pendente no handoff do PR, com dono e prazo.
+
+Sem esse registro, o próximo desenvolvedor encontra duas pastas de rotas e um backend fora do padrão, e não tem como distinguir decisão de descuido. Com ele, cada desvio carrega o motivo e o custo de reverter.
