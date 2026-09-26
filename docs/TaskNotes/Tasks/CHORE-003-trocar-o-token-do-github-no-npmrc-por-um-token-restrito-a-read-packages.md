@@ -20,7 +20,7 @@ ai:
 Description here.
 
 ## Subtasks
-- [ ] Gerar PAT classic no GitHub com escopo apenas read:packages
-- [ ] Substituir o token em ~/.npmrc e validar com npm view @parisgroup-ai/pg-devkit
+- [x] Gerar PAT classic no GitHub com escopo apenas read:packages
+- [x] Substituir o token em ~/.npmrc e validar com npm view @parisgroup-ai/pg-devkit
 - [ ] Revogar o escopo read:packages do token do gh CLI
 ## Notes
